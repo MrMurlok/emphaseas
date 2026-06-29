@@ -1,0 +1,71 @@
+/* Plugin gallery module */
+.plugin_gallery-grid {
+	position: relative;
+	display: grid;
+	height: 570px;
+	border-radius: 18px;
+	overflow: hidden;
+	background: rgba(255, 255, 255, 0.045);
+}
+
+.plugin_gallery-card {
+	grid-area: 1 / 1;
+	display: block;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition:
+		opacity 0.35s ease,
+		visibility 0.35s ease;
+}
+
+.plugin_gallery-card.is-active {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+.plugin_gallery-media {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	background: #000;
+}
+
+.plugin_gallery-card img.plugin_gallery-media {
+	object-position: center;
+}
+
+.plugin_gallery-nav-flex {
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	z-index: 4;
+	display: flex;
+	gap: 10px;
+}
+
+.plugin_gallery-nav-flex .icon_btn {
+	backdrop-filter: blur(12px);
+}
+
+@media (max-width: 1180px) {
+	.plugin_gallery-grid,
+	.plugin_gallery-media {
+		max-height: 360px;
+	}
+}
+
+@media (max-width: 680px) {
+	.plugin_gallery-grid,
+	.plugin_gallery-media {
+		max-height: 260px;
+	}
+
+	.plugin_gallery-nav-flex {
+		right: 14px;
+		bottom: 14px;
+	}
+}

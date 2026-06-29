@@ -1,0 +1,11 @@
+# Запрещаем прямой доступ к файлу кеша из браузера
+<Files "yt_cache.json">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# PHP файлы — разрешаем
+<Files "*.php">
+    Order Allow,Deny
+    Allow from all
+</Files>

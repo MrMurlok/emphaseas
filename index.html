@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Emphaseas — music production, Massimizer VST, mastering, education, label and video content." />
+		<meta name="robots" content="index, follow" />
+		<title>Emphaseas — Music Production</title>
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/plugin.css" />
+		<link rel="stylesheet" href="css/mastering.css" />
+		<link rel="stylesheet" href="css/review.css" />
+		<link rel="stylesheet" href="css/catalog.css" />
+		<link rel="stylesheet" href="css/youtube.css" />
+	</head>
+	<body>
+		<header class="header" data-header>
+			<div class="container header_block-flex">
+				<a class="header_logo-flex" href="#hero" aria-label="Emphaseas home">
+					<img class="header_logo-img" src="assets/img/logo.png" alt="Emphaseas" />
+					<span class="header_logo-text">Emphaseas</span>
+				</a>
+
+				<nav class="header_nav-flex" data-nav>
+					<a href="#plugin">Плагин</a>
+					<a href="#studio">Студия</a>
+					<a href="#education">Обучение</a>
+					<a href="#label">Лейбл</a>
+					<a href="#youtube">YouTube</a>
+					<a href="#contacts">Контакты</a>
+				</nav>
+
+				<div class="header_actions-flex">
+					<button class="header_lang-flex" type="button" data-lang-toggle><span>RU</span><i>/</i><span>EN</span></button>
+					<button class="header_burger-flex" type="button" aria-label="Открыть меню" data-burger>
+						<img src="assets/icons/burger.svg" alt="" aria-hidden="true" />
+					</button>
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<!-- hero  -->
+			<section class="section hero" id="hero">
+				<div class="container hero_block-grid">
+					<div class="hero_content-flex">
+						<h1 class="hero_title">Emphaseas / Эмфасиз</h1>
+						<p class="hero_text">Комьюнити музыкальных продюсеров.</p>
+						<div class="hero_actions-flex">
+							<a class="btn btn_primary" href="#plugin">Узнать больше</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- plugin  -->
+			<section class="section plugin" id="plugin">
+				<div class="container plugin_block-grid">
+					<div class="plugin_header-flex">
+						<h2 class="plugin_title"><span class="text_purple">01</span><span data-i18n="plugin_title">Emphaseas x Pretender — Massimizer VST</span></h2>
+					</div>
+
+					<div class="plugin_gallery-grid" data-plugin-gallery>
+						<article class="plugin_gallery-card is-active" data-plugin-slide aria-hidden="false">
+							<video class="plugin_gallery-media" autoplay muted loop playsinline preload="metadata" poster="assets/img/maximaizer.webp">
+								<source src="assets/video/mass.webm" type="video/webm" />
+								<source src="assets/video/mass.mp4" type="video/mp4" />
+								Ваш браузер не поддерживает видео.
+							</video>
+						</article>
+						<article class="plugin_gallery-card" data-plugin-slide aria-hidden="true">
+							<img class="plugin_gallery-media" src="assets/img/maximaizer.webp" alt="Massimizer VST интерфейс" loading="lazy" />
+						</article>
+						<article class="plugin_gallery-card" data-plugin-slide aria-hidden="true">
+							<img class="plugin_gallery-media" src="assets/img/maximaizer_2.webp" alt="Massimizer VST визуализация" loading="lazy" />
+						</article>
+
+						<div class="plugin_gallery-nav-flex" aria-label="Галерея плагина">
+							<button class="icon_btn" type="button" aria-label="Предыдущий слайд" data-plugin-prev><img src="assets/icons/left.svg" alt="" srcset=""></button>
+							<button class="icon_btn" type="button" aria-label="Следующий слайд" data-plugin-next><img src="assets/icons/right.svg" alt="" srcset=""></button>
+						</div>
+					</div>
+
+					<div class="plugin_actions-flex">
+						<button class="btn btn_primary btn_plugin" type="button" data-modal-open="plugin_modal">Подробнее</button>
+						<a class="btn btn_outline btn_plugin" href="assets/downloads/Massimizer_v1.0.1.zip" download>Скачать</a>
+						<button class="btn btn_ghost btn_plugin" type="button" data-modal-open="donate_modal">Поддержать</button>
+					</div>
+				</div>
+			</section>
+			<!-- studio  -->
+			<section class="section studio" id="studio">
+				<div class="container studio_block-grid">
+					<div class="studio_info-flex">
+						<h2 class="studio_title"><span class="text_purple">02</span><span>Emphaseas Studio</span></h2>
+						<p class="studio_subtitle text_purple">Мастеринг и сведение</p>
+						<p class="studio_text"><b>Профессиональный мастеринг любых стилей электронной музыки и AI-треков.</b> Большой опыт мастеринга и сведения позволяет "вытягивать" даже работы новичков.</p>
+						<ul class="studio_list-flex">
+							<li>Стерео мастеринг</li>
+							<li>Stem мастеринг</li>
+							<li>Сведение треков</li>
+							<li>Оптимизация для стримингов</li>
+							<li>Работа с AI-треками</li>
+						</ul>
+						<a class="btn btn_primary btn_section" href="#contacts">Заказать мастеринг</a>
+					</div>
+
+					<div class="mastering_players-flex">
+						<article class="mastering_player" data-mastering-player data-after-src="assets/audio/audio_1.mp3" data-before-src="assets/audio/audio_2.mp3">
+							<div class="mastering_compare">
+								<div class="mastering_compare-labels"><span>After</span><span>Before</span></div>
+								<canvas class="mastering_equalizer" data-equalizer width="760" height="120" aria-hidden="true"></canvas>
+								<input class="mastering_mix" data-mix-slider type="range" min="0" max="100" value="0" aria-label="Переключение After / Before" />
+							</div>
+							<div class="mastering_controls-flex">
+								<button class="mastering_play" type="button" data-play aria-label="Воспроизвести Demo 1"><img src="assets/icons/play_1.svg" alt="" data-play-icon /></button>
+								<div class="mastering_meta"><strong>Demo 1</strong><span data-current>00:00</span></div>
+								<input class="mastering_seek" data-seek type="range" min="0" max="1000" value="0" aria-label="Перемотка Demo 1" />
+								<span class="mastering_remaining" data-remaining>-00:00</span>
+							</div>
+						</article>
+
+						<article class="mastering_player" data-mastering-player data-after-src="assets/audio/audio_1.mp3" data-before-src="assets/audio/audio_2.mp3">
+							<div class="mastering_compare">
+								<div class="mastering_compare-labels"><span>After</span><span>Before</span></div>
+								<canvas class="mastering_equalizer" data-equalizer width="760" height="120" aria-hidden="true"></canvas>
+								<input class="mastering_mix" data-mix-slider type="range" min="0" max="100" value="0" aria-label="Переключение After / Before" />
+							</div>
+							<div class="mastering_controls-flex">
+								<button class="mastering_play" type="button" data-play aria-label="Воспроизвести Demo 2"><img src="assets/icons/play_1.svg" alt="" data-play-icon /></button>
+								<div class="mastering_meta"><strong>Demo 2</strong><span data-current>00:00</span></div>
+								<input class="mastering_seek" data-seek type="range" min="0" max="1000" value="0" aria-label="Перемотка Demo 2" />
+								<span class="mastering_remaining" data-remaining>-00:00</span>
+							</div>
+						</article>
+
+						<article class="mastering_player" data-mastering-player data-after-src="assets/audio/audio_1.mp3" data-before-src="assets/audio/audio_2.mp3">
+							<div class="mastering_compare">
+								<div class="mastering_compare-labels"><span>After</span><span>Before</span></div>
+								<canvas class="mastering_equalizer" data-equalizer width="760" height="120" aria-hidden="true"></canvas>
+								<input class="mastering_mix" data-mix-slider type="range" min="0" max="100" value="0" aria-label="Переключение After / Before" />
+							</div>
+							<div class="mastering_controls-flex">
+								<button class="mastering_play" type="button" data-play aria-label="Воспроизвести Demo 3"><img src="assets/icons/play_1.svg" alt="" data-play-icon /></button>
+								<div class="mastering_meta"><strong>Demo 3</strong><span data-current>00:00</span></div>
+								<input class="mastering_seek" data-seek type="range" min="0" max="1000" value="0" aria-label="Перемотка Demo 3" />
+								<span class="mastering_remaining" data-remaining>-00:00</span>
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<section class="faq" id="faq">
+				<div class="container faq_block-grid">
+					<h2 class="faq_title"><span class="text_purple">FAQ</span><span>Часто задаваемые вопросы</span></h2>
+					<div class="faq_list-flex">
+						<article class="faq_item">
+							<button class="faq_head-flex" type="button">Что входит в мастеринг?<span>+</span></button>
+							<p>Краткий ответ будет редактироваться через админ-панель.</p>
+						</article>
+						<article class="faq_item">
+							<button class="faq_head-flex" type="button">Сколько времени занимает работа?<span>+</span></button>
+							<p>Краткий ответ будет редактироваться через админ-панель.</p>
+						</article>
+						<article class="faq_item">
+							<button class="faq_head-flex" type="button">Какие форматы принимаете?<span>+</span></button>
+							<p>Краткий ответ будет редактироваться через админ-панель.</p>
+						</article>
+					</div>
+				</div>
+			</section>
+			<!-- education  -->
+			<section class="section education" id="education">
+				<div class="container education_block-grid">
+					<div class="education_info-flex">
+						<h2 class="education_title"><span class="text_purple">03</span><span>Индивидуальное обучение</span></h2>
+						<p class="education_subtitle text_purple">Прокачай свои навыки</p>
+						<p class="education_text">Индивидуальное обучение продакшену музыки с нуля и для продвинутых. Любые стили, никаких предзаписанных видео и групп. <br> В приоритете Drum & Bass, но есть огромный опыт и в других направлениях. Программа гибкая, сформированная за более чем 10 лет преподования. Полностью индивидуальный подход, мой принцип - обучение это диалог и поддержка.</p>
+						<ul class="education_list-flex">
+							<li>Индивидуальная программа</li>
+							<li>Практика на реальных проектах</li>
+							<li>Разборы и обратная связь</li>
+							<li>Поддержка между занятиями</li>
+							<li>Онлайн формат по всему миру</li>
+						</ul>
+						<a class="btn btn_primary btn_section" href="#contacts">Забронировать free сессию</a>
+					</div>
+					<div class="education_media"><img src="assets/img/studio.webp" alt="Студия Emphaseas" /></div>
+					<div class="review_card-flex" data-review-slider>
+						<div class="review_track" data-review-track>
+							<article class="review_slide is-active" data-review-slide>
+								<p class="review_quote text_purple"><img src="assets/icons/quote.svg" alt="" srcset="" /></p>
+								<p class="review_text">Занятия дали мощный буст моим навыкам и уверенности в продакшене.</p>
+								<div class="review_stars" aria-label="5 из 5">★★★★★</div>
+								<strong>Alexey, Producer</strong>
+								<span>Ученик курса</span>
+							</article>
+							<article class="review_slide" data-review-slide>
+								<p class="review_quote text_purple"><img src="assets/icons/quote.svg" alt="" srcset="" /></p>
+								<p class="review_text">После пары занятий я наконец понял, как выстроить микс и не терять энергию трека.</p>
+								<div class="review_stars" aria-label="5 из 5">★★★★★</div>
+								<strong>Maria, DJ</strong>
+								<span>Индивидуальное обучение</span>
+							</article>
+							<article class="review_slide" data-review-slide>
+								<p class="review_quote text_purple"><img src="assets/icons/quote.svg" alt="" srcset="" /></p>
+								<p class="review_text">Разбор проекта был точным и практичным. Сразу стало понятно, что исправить в аранжировке.</p>
+								<div class="review_stars" aria-label="5 из 5">★★★★★</div>
+								<strong>Denis, Sound Producer</strong>
+								<span>Разбор трека</span>
+							</article>
+						</div>
+						<div class="review_dots" data-review-dots aria-label="Переключение отзывов"></div>
+						<div class="review_arrows-flex">
+							<button class="icon_btn" type="button" data-review-prev aria-label="Предыдущий отзыв"><img src="assets/icons/left.svg" alt="" srcset=""></button>
+							<button class="icon_btn" type="button" data-review-next aria-label="Следующий отзыв"><img src="assets/icons/right.svg" alt="" srcset=""></button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- label  -->
+			<section class="section label" id="label">
+				<div class="container label_block-grid">
+					<div class="label_info-flex">
+						<h2 class="label_title"><span class="text_purple">04</span><span>Музыкальный лейбл Эмфасиз</span></h2>
+						<p class="label_subtitle text_purple">Emphaseas Music</p>
+						<p class="label_text">Emphaseas Music - мультижанровый музыкальный лейбл. За плечами более 50 релизов от молодых и перспективных СНГ-артистов. Опять же в приоритете Drum & Bass, но мы открыты ко всему, от хауса до эмбиента</p>
+						<ul class="label_list-flex">
+							<li>Релизы на Bandcamp и SoundCloud</li>
+							<li>Поддержка артистов</li>
+							<li>Синхронизация и лицензирование</li>
+						</ul>
+					</div>
+					<div class="catalog_block" data-catalog>
+						<div class="catalog_viewport">
+							<div class="catalog_track" data-catalog-track></div>
+						</div>
+						<div class="catalog_arrows-flex">
+							<button class="icon_btn" type="button" data-catalog-prev aria-label="Предыдущий столбец"><img src="assets/icons/left.svg" alt="" srcset=""></button>
+							<button class="icon_btn" type="button" data-catalog-next aria-label="Следующий столбец"><img src="assets/icons/right.svg" alt="" srcset=""></button>
+						</div>
+					</div>
+					<div class="label_links-flex"><a class="btn btn_outline btn_label" href="https://emphaseas.bandcamp.com/">Перейти на Bandcamp</a><a class="btn btn_primary btn_label" href="https://soundcloud.com/emphaseas">Слушать на SoundCloud</a></div>
+				</div>
+			</section>
+			<!-- youtube  -->
+			<section class="section youtube" id="youtube" data-youtube-section>
+				<div class="container youtube_block-grid">
+					<div class="youtube_info-flex">
+						<h2 class="youtube_title"><span class="text_purple">05</span><span>YouTube канал</span></h2>
+						<p class="youtube_subtitle text_purple">Новые видео о продакшене</p>
+						<p class="youtube_text">Обзоры плагинов, туториалы, разборы треков и всё, что помогает делать лучшую музыку.</p>
+						<a class="btn btn_primary btn_section" href="https://www.youtube.com/@emphaseas" target="_blank" rel="noopener">Перейти на канал</a>
+					</div>
+
+					<a class="youtube_preview" href="https://www.youtube.com/@emphaseas" target="_blank" rel="noopener" data-youtube-link aria-label="Открыть последнее видео на YouTube">
+						<img class="youtube_thumb" src="assets/img/maximaizer.webp" alt="Последнее видео Emphaseas" data-youtube-thumb loading="lazy" />
+						<span class="youtube_play" aria-hidden="true">▶</span>
+						<span class="youtube_status" data-youtube-status>Загружаем последнее видео...</span>
+					</a>
+
+					<div class="youtube_content-flex">
+						<h3 data-youtube-title>Последнее видео загружается</h3>
+						<p data-youtube-description>После загрузки здесь появится описание последнего обычного видео с YouTube-канала. Shorts и стримы не выводятся.</p>
+					</div>
+				</div>
+			</section>
+			<!-- contacts  -->
+			<section class="section contacts" id="contacts">
+				<div class="container contacts_block-grid">
+					<div class="contacts_info-flex">
+						<h2 class="contacts_title"><span class="text_purple">06</span><span>Связаться с Emphaseas</span></h2>
+						<p>Заявки на мастеринг, обучение, коллаборации и вопросы по проекту.</p>
+					</div>
+					<form class="contacts_form-flex" action="#" method="post">
+						<input type="text" name="name" placeholder="Имя" />
+						<input type="email" name="email" placeholder="Email" />
+						<input type="text" name="subject" placeholder="Тема" />
+						<textarea name="message" placeholder="Сообщение"></textarea>
+						<button class="btn btn_primary" type="submit">Отправить</button>
+					</form>
+				</div>
+			</section>
+		</main>
+		<!-- catalog player -->
+		<div class="catalog_player" data-catalog-player aria-hidden="true">
+			<div class="catalog_player-inner">
+				<img class="catalog_player-cover" data-catalog-player-cover src="" alt="" />
+				<div class="catalog_player-info">
+					<strong data-catalog-player-title></strong>
+					<span data-catalog-player-artist></span>
+				</div>
+				<div class="catalog_player-controls">
+					<button class="catalog_player-control-btn" type="button" data-catalog-player-prev aria-label="Предыдущий трек">
+						<img src="assets/icons/left.svg" alt="" />
+					</button>
+					<button class="catalog_player-control-btn" type="button" data-catalog-player-toggle aria-label="Воспроизвести">
+						<img src="assets/icons/play_2.svg" alt="" data-catalog-player-play-icon />
+					</button>
+					<button class="catalog_player-control-btn" type="button" data-catalog-player-next aria-label="Следующий трек">
+						<img src="assets/icons/right.svg" alt="" />
+					</button>
+				</div>
+				<span class="catalog_player-time" data-catalog-player-current>0:00</span>
+				<input class="catalog_player-seek" data-catalog-player-seek type="range" min="0" max="1000" value="0" aria-label="Перемотка трека" />
+				<span class="catalog_player-time" data-catalog-player-left>-0:00</span>
+				<button class="catalog_player-close-btn" type="button" data-catalog-player-close aria-label="Закрыть плеер">
+					<img src="assets/icons/close.svg" alt="" />
+				</button>
+			</div>
+		</div>
+		<!-- footer  -->
+		<footer class="footer" id="footer">
+			<div class="container footer_block-grid">
+				<div class="footer_brand-flex">
+					<a class="footer_logo-flex" href="#hero"><img src="assets/img/logo.png" alt="Emphaseas" /><span>Emphaseas</span></a>
+					<p>Сервис, инструменты и знания для тех, кто создает музыку на профессиональном уровне.</p>
+				</div>
+				<nav class="footer_nav-flex">
+					<h3>Навигация</h3>
+					<a href="#plugin">Плагин Massimizer</a><a href="#studio">Студия Compress</a><a href="#education">Обучение</a><a href="#label">Лейбл</a><a href="#youtube">YouTube</a>
+				</nav>
+				<nav class="footer_links-flex">
+					<h3>Ссылки</h3>
+					<a href="https://emphaseas.bandcamp.com/">Bandcamp</a><a href="https://soundcloud.com/emphaseas">SoundCloud</a><a href="https://www.instagram.com/emphaseas/">Instagram</a><a href="https://t.me/emphaseas">Telegram</a><a href="https://www.youtube.com/@emphaseas">YouTube</a><a href="https://www.tiktok.com/@emphaseas">TikTok</a>
+				</nav>
+				<div class="footer_contacts-flex">
+					<h3>Контакты</h3>
+					<a href="mailto:emphaseas.team@gmail.com">emphaseas.team@gmail.com</a>
+					<div class="footer_socials-flex">
+						<a href="https://www.instagram.com/emphaseas/"><img src="assets/icons/instagram.svg" alt="Instagram" /></a><a href="https://t.me/emphaseas"><img src="assets/icons/telegram.svg" alt="Telegram" /></a><a href="https://www.youtube.com/@emphaseas"><img src="assets/icons/youtube.svg" alt="YouTube" /></a><a href="https://www.tiktok.com/@emphaseas"><img src="assets/icons/tik_tok.svg" alt="TikTok" /></a>
+					</div>
+				</div>
+				<div class="footer_bottom-grid">
+					<p>© 2026 Emphaseas. Все права защищены</p>
+					<div><a href="#">Политика конфиденциальности</a><span>|</span><a href="#">Условия использования</a></div>
+					<p>Developed by <a href="https://khimichdev.ru">Khimich Aleksandr</a></p>
+				</div>
+			</div>
+		</footer>
+
+		<div class="modal modal_plugin" id="plugin_modal" aria-hidden="true">
+			<div class="modal_overlay" data-modal-close></div>
+			<div class="modal_body modal_body-large">
+				<button class="modal_close" type="button" data-modal-close aria-label="Закрыть">×</button>
+				<p class="modal_eyebrow">Massimizer VST</p>
+				<h3>Emphaseas x Pretender — Massimizer VST</h3>
+
+				<div class="modal_accordion" data-modal-accordion>
+					<article class="modal_accordion-item is-open">
+						<button class="modal_accordion-head" type="button" data-modal-accordion-head>
+							<span>Апдейты · 1.0.1</span>
+							<span class="modal_accordion-icon">+</span>
+						</button>
+						<div class="modal_accordion-content">
+							<ul>
+								<li>Добавлена поддержка AU и Logic PRO, смотри мануал по фиксу проблемы роутинга в этой DAW.</li>
+								<li>macOS плагин теперь официально подписан. Добавлен нормальный инсталлер.</li>
+								<li>Опечатка Treshold исправлена, теперь THreshold.</li>
+							</ul>
+						</div>
+					</article>
+				</div>
+
+				<div class="modal_text-content">
+					<p><strong>[RU]</strong> Ваш звук на пределе возможного. Громкость без компромиссов. Чистота без потерь. Контролируемая агрессия.</p>
+					<p>MASSIMIZER — это не просто рингмод сайдчейн компрессор с насыщением, а продуманная система экстремального усиления громкости без клиппинга и сохранением динамики и детализации.</p>
+					<p>Гармоническое уплотнение сигнала без перегрузки по частотам. Темп-синхронизированный осцилограф — точная визуализация формы волны в ритме вашего трека. Многофункциональный измеритель динамики — контроль RMS, пиков и LUFS-M в реальном времени. Гониометр с фазовым анализатором и стереорасширителем — безупречная стереокартина и контроль моносовместимости.</p>
+					<p>MASSIMIZER — профессиональный инструмент для тех, кто не готов жертвовать качеством ради громкости. Используйте тот же секрет, что и ведущие инженеры сведения и мастеринга: контролируемая агрессия и максимальная мощность без клиппинга.</p>
+					<p>Плагин всё ещё находится в активной стадии разработки, так что будем рады любому фидбеку по его работе или информации по найденным багам.</p>
+					<p>По всем вопросам: <a href="https://t.me/emphaseas" target="_blank" rel="noopener">https://t.me/emphaseas</a></p>
+					<p>Написать разработчику напрямую: <a href="mailto:massimizer@gmail.com">massimizer@gmail.com</a></p>
+				</div>
+
+				<div class="modal_accordion modal_accordion-development" data-modal-accordion>
+					<article class="modal_accordion-item">
+						<button class="modal_accordion-head" type="button" data-modal-accordion-head>
+							<span>Планы по разработке</span>
+							<span class="modal_accordion-icon">+</span>
+						</button>
+						<div class="modal_accordion-content">
+							<ul>
+								<li>Исправление багов.</li>
+								<li>Добавить Smooth для Ringmod, чтобы была возможность сгладить его специфическое звучание.</li>
+								<li>LowCut, HighCut фильтры для детектора в Compress.</li>
+								<li>Обновить интерфейс.</li>
+							</ul>
+						</div>
+					</article>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal modal_donate" id="donate_modal" aria-hidden="true">
+			<div class="modal_overlay" data-modal-close></div>
+			<div class="modal_body modal_body-donate">
+				<button class="modal_close" type="button" data-modal-close aria-label="Закрыть">×</button>
+				<p class="modal_eyebrow">Donate</p>
+				<h3>Поддержать разработку</h3>
+				<p class="modal_lead">Выберите удобный способ доната. Ссылки откроются в новой вкладке.</p>
+				<div class="donate_links-flex">
+					<a class="donate_link" href="https://web.tribute.tg/d/C7W" target="_blank" rel="noopener"><span>Tribute</span><span>→</span></a>
+					<a class="donate_link" href="https://tips.yandex.ru/guest/payment/3400554" target="_blank" rel="noopener"><span>Яндекс Чаевые</span><span>→</span></a>
+					<a class="donate_link" href="https://www.donationalerts.com/r/emphaseas" target="_blank" rel="noopener"><span>DonationAlerts</span><span>→</span></a>
+					<a class="donate_link" href="https://www.paypal.com/paypalme/eastcolorsUK" target="_blank" rel="noopener"><span>PayPal</span><span>→</span></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="youtube_lightbox" data-youtube-lightbox aria-hidden="true">
+			<div class="youtube_lightbox-overlay" data-youtube-lightbox-close></div>
+			<div class="youtube_lightbox-body">
+				<button class="youtube_lightbox-close" type="button" data-youtube-lightbox-close aria-label="Закрыть">×</button>
+				<iframe data-youtube-iframe src="" allow="autoplay; encrypted-media" allowfullscreen title="YouTube video"></iframe>
+			</div>
+		</div>
+		<script src="js/main.js" defer></script>
+		<script src="js/plugin.js" defer></script>
+		<script src="js/mastering.js" defer></script>
+		<script src="js/review.js" defer></script>
+		<script src="js/catalog.js" defer></script>
+		<script src="js/youtube.js" defer></script>
+	</body>
+</html>

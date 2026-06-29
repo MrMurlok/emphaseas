@@ -1,0 +1,63 @@
+.review_card-flex {
+	isolation: isolate;
+}
+
+.review_track {
+	position: relative;
+	width: 100%;
+	min-height: 360px;
+}
+
+.review_slide {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 22px;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateX(18px);
+	transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s ease;
+}
+
+.review_slide.is-active {
+	opacity: 1;
+	visibility: visible;
+	transform: translateX(0);
+}
+
+.review_dots {
+	position: absolute;
+	left: 46px;
+	bottom: 28px;
+	display: flex;
+	gap: 10px;
+}
+
+.review_dot {
+	width: 9px;
+	height: 9px;
+	padding: 0;
+	border: 1px solid var(--purple);
+	border-radius: 50%;
+	background: transparent;
+	cursor: pointer;
+	transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.review_dot.is-active {
+	background: var(--purple);
+	transform: scale(1.15);
+}
+
+@media (max-width: 680px) {
+	.review_track {
+		min-height: 240px;
+	}
+
+	.review_dots {
+		left: 24px;
+		bottom: 24px;
+	}
+}

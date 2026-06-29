@@ -1,0 +1,141 @@
+ .youtube_preview {
+	position: relative;
+	overflow: hidden;
+	border: 1px solid rgba(141, 60, 255, 0.5);
+	background: var(--card);
+	text-decoration: none;
+}
+
+.youtube_thumb {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0.92;
+	transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.youtube_preview:hover .youtube_thumb {
+	transform: scale(1.025);
+	opacity: 1;
+}
+
+.youtube_play {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 72px;
+	height: 72px;
+	transform: translate(-50%, -50%);
+	display: grid;
+	place-items: center;
+	border-radius: 50%;
+	background: rgba(141, 60, 255, 0.92);
+	color: #fff;
+	font-size: 28px;
+	line-height: 1;
+	box-shadow: 0 0 34px rgba(141, 60, 255, 0.42);
+}
+
+.youtube_status {
+	position: absolute;
+	left: 18px;
+	right: 18px;
+	bottom: 18px;
+	padding: 10px 12px;
+	border-radius: 8px;
+	background: rgba(0, 0, 0, 0.62);
+	color: #fff;
+	font-size: 13px;
+	font-weight: 900;
+	text-align: center;
+}
+
+.youtube_status:empty {
+	display: none;
+}
+
+.youtube_content-flex h3 {
+	word-break: break-word;
+}
+
+.youtube_content-flex p {
+	display: -webkit-box;
+	-webkit-line-clamp: 8;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+@media (max-width: 680px) {
+	.youtube_thumb {
+		height: 180px;
+	}
+
+	.youtube_play {
+		width: 58px;
+		height: 58px;
+		font-size: 22px;
+	}
+}
+
+.youtube_lightbox {
+	position: fixed;
+	inset: 0;
+	z-index: 120;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+}
+
+.youtube_lightbox.is-open {
+	display: flex;
+}
+
+.youtube_lightbox-overlay {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.78);
+	backdrop-filter: blur(10px);
+}
+
+.youtube_lightbox-body {
+	position: relative;
+	z-index: 1;
+	width: min(900px, 100%);
+	border: 1px solid rgba(141, 60, 255, 0.45);
+	border-radius: 18px;
+	background: rgba(8, 4, 15, 0.95);
+	overflow: hidden;
+	box-shadow: 0 28px 80px rgba(0, 0, 0, 0.5);
+}
+
+.youtube_lightbox-close {
+	position: absolute;
+	top: 14px;
+	right: 14px;
+	z-index: 2;
+	width: 36px;
+	height: 36px;
+	border: 0;
+	background: rgba(0, 0, 0, 0.55);
+	color: #fff;
+	font-size: 26px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.youtube_lightbox-close:hover {
+	background: rgba(141, 60, 255, 0.75);
+}
+
+.youtube_lightbox iframe {
+	display: block;
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	border: 0;
+	background: #000;
+}
+
+body.youtube-modal-open {
+	overflow: hidden;
+}
