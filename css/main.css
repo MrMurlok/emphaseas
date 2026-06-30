@@ -995,6 +995,35 @@ iframe {
 	color: var(--purple);
 }
 
+.modal_body-legal {
+	width: min(980px, 100%);
+}
+
+.modal_legal-content {
+	gap: 14px;
+}
+
+.modal_legal-content h4 {
+	margin: 14px 0 0;
+	color: #fff;
+	font-family: var(--h1-font);
+	font-size: 18px;
+	line-height: 1.25;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+}
+
+.modal_legal-content ul {
+	display: grid;
+	gap: 8px;
+	padding-left: 22px;
+	list-style: disc;
+}
+
+.modal_legal-content li::marker {
+	color: var(--purple);
+}
+
 .modal_accordion {
 	display: grid;
 	gap: 12px;
