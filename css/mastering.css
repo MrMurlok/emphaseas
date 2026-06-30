@@ -1,14 +1,27 @@
 /* Block 02: before / after audio players */
 .mastering_players-flex {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 24px;
+}
+
+.mastering_group {
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
+	gap: 12px;
+}
+
+.mastering_group-title {
+	font-family: var(--h1-font);
+	font-size: clamp(18px, 1.45vw, 28px);
+	line-height: 1.1;
+	color: var(--purple);
 }
 
 .mastering_player {
 	overflow: hidden;
 	border: 1px solid var(--purple);
-	border-radius: 22px;
+	border-radius: 18px;
 	background: var(--card);
 	color: var(--text);
 	box-shadow: 0 18px 56px rgba(0, 0, 0, 0.28);
@@ -16,7 +29,7 @@
 
 .mastering_compare {
 	position: relative;
-	padding: 18px 30px 10px;
+	padding: 12px 18px 8px;
 }
 
 .mastering_compare-labels {
@@ -24,7 +37,7 @@
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 4px;
-	font-size: clamp(18px, 1.45vw, 28px);
+	font-size: clamp(13px, 0.95vw, 18px);
 	line-height: 1;
 	letter-spacing: 0.03em;
 	color: var(--text);
@@ -33,16 +46,16 @@
 .mastering_equalizer {
 	display: block;
 	width: 100%;
-	height: 76px;
+	height: 52px;
 }
 
 .mastering_mix {
 	position: absolute;
-	left: 30px;
-	right: 30px;
-	bottom: 8px;
-	width: calc(100% - 60px);
-	height: 94px;
+	left: 18px;
+	right: 18px;
+	bottom: 6px;
+	width: calc(100% - 36px);
+	height: 68px;
 	margin: 0;
 	appearance: none;
 	-webkit-appearance: none;
@@ -62,8 +75,8 @@
 }
 
 .mastering_mix::-webkit-slider-thumb {
-	width: 46px;
-	height: 46px;
+	width: 34px;
+	height: 34px;
 	border: 0;
 	border-radius: 50%;
 	appearance: none;
@@ -73,8 +86,8 @@
 }
 
 .mastering_mix::-moz-range-thumb {
-	width: 46px;
-	height: 46px;
+	width: 34px;
+	height: 34px;
 	border: 0;
 	border-radius: 50%;
 	background: #fff url("../assets/icons/exchange.svg") center / 24px 24px no-repeat;
@@ -83,17 +96,17 @@
 
 .mastering_controls-flex {
 	display: grid;
-	grid-template-columns: 74px 112px minmax(140px, 1fr) 82px;
+	grid-template-columns: 46px 86px minmax(90px, 1fr) 58px;
 	align-items: center;
-	gap: 18px;
-	padding: 4px 30px 24px;
+	gap: 10px;
+	padding: 2px 18px 16px;
 }
 
 .mastering_play {
 	display: grid;
 	place-items: center;
-	width: 66px;
-	height: 66px;
+	width: 42px;
+	height: 42px;
 	border: 0;
 	border-radius: 0;
 	background: transparent;
@@ -109,22 +122,22 @@
 }
 
 .mastering_play img {
-	width: 46px;
-	height: 46px;
+	width: 32px;
+	height: 32px;
 	pointer-events: none;
 }
 
 .mastering_meta {
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	gap: 6px;
 	min-width: 0;
 	color: var(--text);
 }
 
 .mastering_meta strong {
 	font-family: var(--h1-font);
-	font-size: clamp(22px, 1.85vw, 34px);
+	font-size: clamp(14px, 1vw, 18px);
 	line-height: 1;
 	white-space: nowrap;
 	color: var(--text);
@@ -132,7 +145,7 @@
 
 .mastering_meta span,
 .mastering_remaining {
-	font-size: clamp(17px, 1.35vw, 26px);
+	font-size: clamp(12px, 0.9vw, 16px);
 	line-height: 1;
 	font-variant-numeric: tabular-nums;
 	color: var(--text);
@@ -140,8 +153,8 @@
 
 .mastering_seek {
 	width: 100%;
-	height: 28px;
-	margin: 24px 0 0;
+	height: 20px;
+	margin: 14px 0 0;
 	appearance: none;
 	-webkit-appearance: none;
 	background: transparent;
@@ -150,21 +163,21 @@
 }
 
 .mastering_seek::-webkit-slider-runnable-track {
-	height: 7px;
+	height: 5px;
 	border-radius: 999px;
 	background: linear-gradient(90deg, var(--purple) 0 var(--progress), rgba(255, 255, 255, 0.25) var(--progress) 100%);
 }
 
 .mastering_seek::-moz-range-track {
-	height: 7px;
+	height: 5px;
 	border-radius: 999px;
 	background: linear-gradient(90deg, var(--purple) 0 var(--progress), rgba(255, 255, 255, 0.25) var(--progress) 100%);
 }
 
 .mastering_seek::-webkit-slider-thumb {
-	width: 28px;
-	height: 28px;
-	margin-top: -10.5px;
+	width: 20px;
+	height: 20px;
+	margin-top: -7.5px;
 	border: 0;
 	border-radius: 50%;
 	appearance: none;
@@ -174,8 +187,8 @@
 }
 
 .mastering_seek::-moz-range-thumb {
-	width: 28px;
-	height: 28px;
+	width: 20px;
+	height: 20px;
 	border: 0;
 	border-radius: 50%;
 	background: #fff;
@@ -183,12 +196,16 @@
 }
 
 .mastering_remaining {
-	margin-top: 24px;
+	margin-top: 14px;
 	text-align: right;
 	white-space: nowrap;
 }
 
 @media (max-width: 980px) {
+	.mastering_players-flex {
+		grid-template-columns: 1fr;
+	}
+
 	.mastering_controls-flex {
 		grid-template-columns: 62px 1fr auto;
 		gap: 14px;

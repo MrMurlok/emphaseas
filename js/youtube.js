@@ -7,7 +7,6 @@
 	const linkEl      = section.querySelector('[data-youtube-link]');
 	const thumbEl     = section.querySelector('[data-youtube-thumb]');
 	const titleEl     = section.querySelector('[data-youtube-title]');
-	const descEl      = section.querySelector('[data-youtube-description]');
 	const statusEl    = section.querySelector('[data-youtube-status]');
 	const lightbox    = document.querySelector('[data-youtube-lightbox]');
 	const iframe      = lightbox?.querySelector('[data-youtube-iframe]');
@@ -47,14 +46,6 @@
 
 		if (titleEl) titleEl.textContent = video.title || 'Последнее видео';
 
-		if (descEl) {
-			// Обрезаем описание до ~280 символов — остальное YouTube итак обрезает
-			const full = video.description || '';
-			descEl.textContent = full.length > 280
-				? full.slice(0, 280).trimEnd() + '...'
-				: full || 'Смотрите на YouTube-канале Emphaseas.';
-		}
-
 		setStatus('');
 	};
 
@@ -64,9 +55,6 @@
 			delete linkEl.dataset.videoId;
 		}
 		if (titleEl) titleEl.textContent = 'НЕ УДАЛОСЬ ЗАГРУЗИТЬ ПОСЛЕДНЕЕ ВИДЕО';
-		if (descEl)  descEl.textContent  =
-			'Проверьте API ключ YouTube и CHANNEL_ID в файле api/youtube_latest.php.' +
-			(msg ? ' (' + msg + ')' : '');
 		setStatus('YouTube');
 	};
 

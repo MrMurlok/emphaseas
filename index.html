@@ -46,6 +46,11 @@
 					<div class="hero_content-flex">
 						<h1 class="hero_title">Emphaseas / Эмфасиз</h1>
 						<p class="hero_text">Комьюнити музыкальных продюсеров.</p>
+						<div class="hero_socials-flex" aria-label="Социальные сети Emphaseas">
+							<a href="https://t.me/emphaseas" target="_blank" rel="noopener" aria-label="Telegram"><img src="assets/icons/telegram.svg" alt="" /></a>
+							<a href="https://www.youtube.com/@emphaseas" target="_blank" rel="noopener" aria-label="YouTube"><img src="assets/icons/youtube.svg" alt="" /></a>
+							<a href="https://www.instagram.com/emphaseas/" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="" /></a>
+						</div>
 						<div class="hero_actions-flex">
 							<a class="btn btn_primary" href="#plugin">Узнать больше</a>
 						</div>
@@ -55,8 +60,10 @@
 			<!-- plugin  -->
 			<section class="section plugin" id="plugin">
 				<div class="container plugin_block-grid">
-					<div class="plugin_header-flex">
+					<div class="plugin_info-flex">
 						<h2 class="plugin_title"><span class="text_purple">01</span><span data-i18n="plugin_title">Emphaseas x Pretender — Massimizer VST</span></h2>
+						<p class="plugin_subtitle">Massimizer - уникальный ringmod-sidechain эффект для современной музыки.</p>
+						<p class="plugin_text">Massimizer VST плагин был скачан более 10000 раз и был номинирован как лучший бесплатный плагин 2025 года на сайте <a href="https://kvraudio.com" target="_blank" rel="noopener noreferrer" style="color: var(--purple);">kvraudio.com</a>.</p>
 					</div>
 
 					<div class="plugin_gallery-grid" data-plugin-gallery>
@@ -83,7 +90,7 @@
 					<div class="plugin_actions-flex">
 						<button class="btn btn_primary btn_plugin" type="button" data-modal-open="plugin_modal">Подробнее</button>
 						<a class="btn btn_outline btn_plugin" href="assets/downloads/Massimizer_v1.0.1.zip" download>Скачать</a>
-						<button class="btn btn_ghost btn_plugin" type="button" data-modal-open="donate_modal">Поддержать</button>
+						<button class="btn btn_ghost btn_plugin" type="button" data-modal-open="donate_modal">Донат на разработку</button>
 					</div>
 				</div>
 			</section>
@@ -101,51 +108,102 @@
 							<li>Оптимизация для стримингов</li>
 							<li>Работа с AI-треками</li>
 						</ul>
-						<a class="btn btn_primary btn_section" href="#contacts">Заказать мастеринг</a>
+						<div class="studio_actions-flex">
+							<a class="btn btn_primary btn_section" href="#contacts">Заказать мастеринг</a>
+							<a class="btn btn_outline btn_section" href="https://soundcloud.com/emphaseas/tracks" target="_blank" rel="noopener">Больше примеров</a>
+						</div>
 					</div>
 
 					<div class="mastering_players-flex">
-						<article class="mastering_player" data-mastering-player data-after-src="assets/audio/audio_1.mp3" data-before-src="assets/audio/audio_2.mp3">
-							<div class="mastering_compare">
-								<div class="mastering_compare-labels"><span>After</span><span>Before</span></div>
-								<canvas class="mastering_equalizer" data-equalizer width="760" height="120" aria-hidden="true"></canvas>
-								<input class="mastering_mix" data-mix-slider type="range" min="0" max="100" value="0" aria-label="Переключение After / Before" />
-							</div>
-							<div class="mastering_controls-flex">
-								<button class="mastering_play" type="button" data-play aria-label="Воспроизвести Demo 1"><img src="assets/icons/play_1.svg" alt="" data-play-icon /></button>
-								<div class="mastering_meta"><strong>Demo 1</strong><span data-current>00:00</span></div>
-								<input class="mastering_seek" data-seek type="range" min="0" max="1000" value="0" aria-label="Перемотка Demo 1" />
-								<span class="mastering_remaining" data-remaining>-00:00</span>
-							</div>
-						</article>
+						<div class="mastering_group">
+							<h3 class="mastering_group-title">Электронная музыка</h3>
+							<article class="mastering_player" data-mastering-player data-after-src="assets/audio/audio_1.mp3" data-before-src="assets/audio/audio_2.mp3">
+								<div class="mastering_compare">
+									<div class="mastering_compare-labels"><span>After</span><span>Before</span></div>
+									<canvas class="mastering_equalizer" data-equalizer width="760" height="120" aria-hidden="true"></canvas>
+									<input class="mastering_mix" data-mix-slider type="range" min="0" max="100" value="0" aria-label="Переключение After / Before" />
+								</div>
+								<div class="mastering_controls-flex">
+									<button class="mastering_play" type="button" data-play aria-label="Воспроизвести Demo 1"><img src="assets/icons/play_1.svg" alt="" data-play-icon /></button>
+									<div class="mastering_meta"><strong>Demo 1</strong><span data-current>00:00</span></div>
+									<input class="mastering_seek" data-seek type="range" min="0" max="1000" value="0" aria-label="Перемотка Demo 1" />
+									<span class="mastering_remaining" data-remaining>-00:00</span>
+								</div>
+							</article>
 
-						<article class="mastering_player" data-mastering-player data-after-src="assets/audio/audio_1.mp3" data-before-src="assets/audio/audio_2.mp3">
-							<div class="mastering_compare">
-								<div class="mastering_compare-labels"><span>After</span><span>Before</span></div>
-								<canvas class="mastering_equalizer" data-equalizer width="760" height="120" aria-hidden="true"></canvas>
-								<input class="mastering_mix" data-mix-slider type="range" min="0" max="100" value="0" aria-label="Переключение After / Before" />
-							</div>
-							<div class="mastering_controls-flex">
-								<button class="mastering_play" type="button" data-play aria-label="Воспроизвести Demo 2"><img src="assets/icons/play_1.svg" alt="" data-play-icon /></button>
-								<div class="mastering_meta"><strong>Demo 2</strong><span data-current>00:00</span></div>
-								<input class="mastering_seek" data-seek type="range" min="0" max="1000" value="0" aria-label="Перемотка Demo 2" />
-								<span class="mastering_remaining" data-remaining>-00:00</span>
-							</div>
-						</article>
+							<article class="mastering_player" data-mastering-player data-after-src="assets/audio/audio_1.mp3" data-before-src="assets/audio/audio_2.mp3">
+								<div class="mastering_compare">
+									<div class="mastering_compare-labels"><span>After</span><span>Before</span></div>
+									<canvas class="mastering_equalizer" data-equalizer width="760" height="120" aria-hidden="true"></canvas>
+									<input class="mastering_mix" data-mix-slider type="range" min="0" max="100" value="0" aria-label="Переключение After / Before" />
+								</div>
+								<div class="mastering_controls-flex">
+									<button class="mastering_play" type="button" data-play aria-label="Воспроизвести Demo 2"><img src="assets/icons/play_1.svg" alt="" data-play-icon /></button>
+									<div class="mastering_meta"><strong>Demo 2</strong><span data-current>00:00</span></div>
+									<input class="mastering_seek" data-seek type="range" min="0" max="1000" value="0" aria-label="Перемотка Demo 2" />
+									<span class="mastering_remaining" data-remaining>-00:00</span>
+								</div>
+							</article>
 
-						<article class="mastering_player" data-mastering-player data-after-src="assets/audio/audio_1.mp3" data-before-src="assets/audio/audio_2.mp3">
-							<div class="mastering_compare">
-								<div class="mastering_compare-labels"><span>After</span><span>Before</span></div>
-								<canvas class="mastering_equalizer" data-equalizer width="760" height="120" aria-hidden="true"></canvas>
-								<input class="mastering_mix" data-mix-slider type="range" min="0" max="100" value="0" aria-label="Переключение After / Before" />
-							</div>
-							<div class="mastering_controls-flex">
-								<button class="mastering_play" type="button" data-play aria-label="Воспроизвести Demo 3"><img src="assets/icons/play_1.svg" alt="" data-play-icon /></button>
-								<div class="mastering_meta"><strong>Demo 3</strong><span data-current>00:00</span></div>
-								<input class="mastering_seek" data-seek type="range" min="0" max="1000" value="0" aria-label="Перемотка Demo 3" />
-								<span class="mastering_remaining" data-remaining>-00:00</span>
-							</div>
-						</article>
+							<article class="mastering_player" data-mastering-player data-after-src="assets/audio/audio_1.mp3" data-before-src="assets/audio/audio_2.mp3">
+								<div class="mastering_compare">
+									<div class="mastering_compare-labels"><span>After</span><span>Before</span></div>
+									<canvas class="mastering_equalizer" data-equalizer width="760" height="120" aria-hidden="true"></canvas>
+									<input class="mastering_mix" data-mix-slider type="range" min="0" max="100" value="0" aria-label="Переключение After / Before" />
+								</div>
+								<div class="mastering_controls-flex">
+									<button class="mastering_play" type="button" data-play aria-label="Воспроизвести Demo 3"><img src="assets/icons/play_1.svg" alt="" data-play-icon /></button>
+									<div class="mastering_meta"><strong>Demo 3</strong><span data-current>00:00</span></div>
+									<input class="mastering_seek" data-seek type="range" min="0" max="1000" value="0" aria-label="Перемотка Demo 3" />
+									<span class="mastering_remaining" data-remaining>-00:00</span>
+								</div>
+							</article>
+						</div>
+
+						<div class="mastering_group">
+							<h3 class="mastering_group-title">AI-треки</h3>
+							<article class="mastering_player" data-mastering-player data-after-src="assets/audio/audio_1.mp3" data-before-src="assets/audio/audio_2.mp3">
+								<div class="mastering_compare">
+									<div class="mastering_compare-labels"><span>After</span><span>Before</span></div>
+									<canvas class="mastering_equalizer" data-equalizer width="760" height="120" aria-hidden="true"></canvas>
+									<input class="mastering_mix" data-mix-slider type="range" min="0" max="100" value="0" aria-label="Переключение After / Before" />
+								</div>
+								<div class="mastering_controls-flex">
+									<button class="mastering_play" type="button" data-play aria-label="Воспроизвести AI Demo 1"><img src="assets/icons/play_1.svg" alt="" data-play-icon /></button>
+									<div class="mastering_meta"><strong>AI Demo 1</strong><span data-current>00:00</span></div>
+									<input class="mastering_seek" data-seek type="range" min="0" max="1000" value="0" aria-label="Перемотка AI Demo 1" />
+									<span class="mastering_remaining" data-remaining>-00:00</span>
+								</div>
+							</article>
+
+							<article class="mastering_player" data-mastering-player data-after-src="assets/audio/audio_1.mp3" data-before-src="assets/audio/audio_2.mp3">
+								<div class="mastering_compare">
+									<div class="mastering_compare-labels"><span>After</span><span>Before</span></div>
+									<canvas class="mastering_equalizer" data-equalizer width="760" height="120" aria-hidden="true"></canvas>
+									<input class="mastering_mix" data-mix-slider type="range" min="0" max="100" value="0" aria-label="Переключение After / Before" />
+								</div>
+								<div class="mastering_controls-flex">
+									<button class="mastering_play" type="button" data-play aria-label="Воспроизвести AI Demo 2"><img src="assets/icons/play_1.svg" alt="" data-play-icon /></button>
+									<div class="mastering_meta"><strong>AI Demo 2</strong><span data-current>00:00</span></div>
+									<input class="mastering_seek" data-seek type="range" min="0" max="1000" value="0" aria-label="Перемотка AI Demo 2" />
+									<span class="mastering_remaining" data-remaining>-00:00</span>
+								</div>
+							</article>
+							
+							<article class="mastering_player" data-mastering-player data-after-src="assets/audio/audio_1.mp3" data-before-src="assets/audio/audio_2.mp3">
+								<div class="mastering_compare">
+									<div class="mastering_compare-labels"><span>After</span><span>Before</span></div>
+									<canvas class="mastering_equalizer" data-equalizer width="760" height="120" aria-hidden="true"></canvas>
+									<input class="mastering_mix" data-mix-slider type="range" min="0" max="100" value="0" aria-label="Переключение After / Before" />
+								</div>
+								<div class="mastering_controls-flex">
+									<button class="mastering_play" type="button" data-play aria-label="Воспроизвести AI Demo 2"><img src="assets/icons/play_1.svg" alt="" data-play-icon /></button>
+									<div class="mastering_meta"><strong>AI Demo 2</strong><span data-current>00:00</span></div>
+									<input class="mastering_seek" data-seek type="range" min="0" max="1000" value="0" aria-label="Перемотка AI Demo 2" />
+									<span class="mastering_remaining" data-remaining>-00:00</span>
+								</div>
+							</article>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -183,7 +241,10 @@
 							<li>Поддержка между занятиями</li>
 							<li>Онлайн формат по всему миру</li>
 						</ul>
-						<a class="btn btn_primary btn_section" href="#contacts">Забронировать free сессию</a>
+						<div class="education_actions-flex">
+							<a class="btn btn_primary btn_section" href="#contacts">Подробнее</a>
+							<a class="btn btn_outline btn_section" href="#contacts">Записаться на бесплатный созвон</a>
+						</div>
 					</div>
 					<div class="education_media"><img src="assets/img/studio.webp" alt="Студия Emphaseas" /></div>
 					<div class="review_card-flex" data-review-slider>
@@ -230,6 +291,7 @@
 							<li>Поддержка артистов</li>
 							<li>Синхронизация и лицензирование</li>
 						</ul>
+						<a class="btn btn_primary btn_section" href="mailto:bookeastcolors@gmail.com?subject=Emphaseas%20Music%20Demo%20Submission">Прислать демо</a>
 					</div>
 					<div class="catalog_block" data-catalog>
 						<div class="catalog_viewport">
@@ -261,7 +323,6 @@
 
 					<div class="youtube_content-flex">
 						<h3 data-youtube-title>Последнее видео загружается</h3>
-						<p data-youtube-description>После загрузки здесь появится описание последнего обычного видео с YouTube-канала. Shorts и стримы не выводятся.</p>
 					</div>
 				</div>
 			</section>
@@ -363,7 +424,7 @@
 				</div>
 
 				<div class="modal_text-content">
-					<p><strong>[RU]</strong> Ваш звук на пределе возможного. Громкость без компромиссов. Чистота без потерь. Контролируемая агрессия.</p>
+					<p>Ваш звук на пределе возможного. Громкость без компромиссов. Чистота без потерь. Контролируемая агрессия.</p>
 					<p>MASSIMIZER — это не просто рингмод сайдчейн компрессор с насыщением, а продуманная система экстремального усиления громкости без клиппинга и сохранением динамики и детализации.</p>
 					<p>Гармоническое уплотнение сигнала без перегрузки по частотам. Темп-синхронизированный осцилограф — точная визуализация формы волны в ритме вашего трека. Многофункциональный измеритель динамики — контроль RMS, пиков и LUFS-M в реальном времени. Гониометр с фазовым анализатором и стереорасширителем — безупречная стереокартина и контроль моносовместимости.</p>
 					<p>MASSIMIZER — профессиональный инструмент для тех, кто не готов жертвовать качеством ради громкости. Используйте тот же секрет, что и ведущие инженеры сведения и мастеринга: контролируемая агрессия и максимальная мощность без клиппинга.</p>

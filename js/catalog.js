@@ -80,6 +80,10 @@
 
 	const closeBtn = player.querySelector('[data-catalog-player-close]');
 	const playIcon = player.querySelector('[data-catalog-player-play-icon]');
+	const updatePlayerOffset = () => {
+		const height = player.classList.contains('is-visible') ? player.offsetHeight : 0;
+		body.style.setProperty('--catalog-player-height', `${height}px`);
+	};
 
 	const formatTime = (seconds) => {
 		if (!Number.isFinite(seconds) || seconds < 0) return '0:00';
@@ -134,6 +138,7 @@
 		player.classList.add('is-visible');
 		player.setAttribute('aria-hidden', 'false');
 		body.classList.add('catalog-player-visible');
+		updatePlayerOffset();
 		updatePlayerInfo();
 
 		if (audio.src !== new URL(release.audio, window.location.href).href) {
@@ -225,7 +230,10 @@
 		player.classList.remove('is-visible');
 		player.setAttribute('aria-hidden', 'true');
 		body.classList.remove('catalog-player-visible');
+		body.style.removeProperty('--catalog-player-height');
 	});
+
+	window.addEventListener('resize', updatePlayerOffset);
 
 	updatePlayerInfo();
 	updateCarousel();

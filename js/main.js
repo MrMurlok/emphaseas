@@ -7,6 +7,55 @@ const modalOpenButtons = document.querySelectorAll('[data-modal-open]');
 const modalCloseButtons = document.querySelectorAll('[data-modal-close]');
 const faqHeads = document.querySelectorAll('.faq_head-flex');
 const modalAccordionHeads = document.querySelectorAll('[data-modal-accordion-head]');
+const revealItems = document.querySelectorAll([
+  '.hero_content-flex',
+  '.plugin_info-flex',
+  '.plugin_gallery-grid',
+  '.plugin_actions-flex',
+  '.studio_info-flex',
+  '.mastering_group',
+  '.faq_title',
+  '.faq_item',
+  '.education_info-flex',
+  '.education_media',
+  '.review_card-flex',
+  '.label_info-flex',
+  '.catalog_block',
+  '.label_links-flex',
+  '.youtube_info-flex',
+  '.youtube_preview',
+  '.youtube_content-flex',
+  '.contacts_info-flex',
+  '.contacts_form-flex',
+  '.footer_brand-flex',
+  '.footer_nav-flex',
+  '.footer_links-flex',
+  '.footer_contacts-flex',
+].join(','));
+
+const revealDirections = ['reveal_from-left', 'reveal_from-right', 'reveal_from-bottom', 'reveal_from-top'];
+
+if (revealItems.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  revealItems.forEach((item, index) => {
+    item.classList.add('reveal', revealDirections[index % revealDirections.length]);
+    item.style.setProperty('--reveal-delay', `${Math.min(index % 3, 2) * 90}ms`);
+  });
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, {
+    threshold: 0.16,
+    rootMargin: '0px 0px -8% 0px',
+  });
+
+  revealItems.forEach((item) => revealObserver.observe(item));
+} else {
+  revealItems.forEach((item) => item.classList.add('is-visible'));
+}
 
 burger?.addEventListener('click', () => {
   nav?.classList.toggle('is-open');
