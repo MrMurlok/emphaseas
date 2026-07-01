@@ -54,20 +54,13 @@
 	display: none;
 }
 
-.youtube_content-flex h3 {
-	word-break: break-word;
-}
-
-.youtube_content-flex p {
-	display: -webkit-box;
-	-webkit-line-clamp: 8;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
-}
-
 @media (max-width: 680px) {
+	.youtube_preview {
+		min-height: auto;
+	}
+
 	.youtube_thumb {
-		height: 180px;
+		height: 100%;
 	}
 
 	.youtube_play {

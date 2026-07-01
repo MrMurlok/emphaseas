@@ -1,11 +1,12 @@
 .review_card-flex {
 	isolation: isolate;
+	min-height: 743px;
 }
 
 .review_track {
 	position: relative;
 	width: 100%;
-	min-height: 360px;
+	min-height: 610px;
 }
 
 .review_slide {
@@ -13,12 +14,36 @@
 	inset: 0;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	gap: 22px;
+	justify-content: flex-start;
+	gap: 16px;
+	height: 100%;
+	padding-bottom: 88px;
 	opacity: 0;
 	visibility: hidden;
 	transform: translateX(18px);
 	transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s ease;
+}
+
+.review_text {
+	height: 520px;
+	overflow-y: auto;
+	padding-right: 8px;
+	scrollbar-width: thin;
+	scrollbar-color: var(--purple) rgba(255, 255, 255, 0.08);
+}
+
+.review_text::-webkit-scrollbar {
+	width: 5px;
+}
+
+.review_text::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0.08);
+	border-radius: 999px;
+}
+
+.review_text::-webkit-scrollbar-thumb {
+	background: var(--purple);
+	border-radius: 999px;
 }
 
 .review_slide.is-active {
@@ -52,8 +77,18 @@
 }
 
 @media (max-width: 680px) {
+	.review_card-flex {
+		min-height: 650px;
+	}
+
 	.review_track {
-		min-height: 240px;
+		min-height: 500px;
+	}
+
+	.review_text {
+		height: auto;
+		max-height: 310px;
+		font-size: 10px;
 	}
 
 	.review_dots {

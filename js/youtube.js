@@ -6,7 +6,6 @@
 
 	const linkEl      = section.querySelector('[data-youtube-link]');
 	const thumbEl     = section.querySelector('[data-youtube-thumb]');
-	const titleEl     = section.querySelector('[data-youtube-title]');
 	const statusEl    = section.querySelector('[data-youtube-status]');
 	const lightbox    = document.querySelector('[data-youtube-lightbox]');
 	const iframe      = lightbox?.querySelector('[data-youtube-iframe]');
@@ -44,8 +43,6 @@
 			thumbEl.alt = video.title || 'Последнее видео Emphaseas';
 		}
 
-		if (titleEl) titleEl.textContent = video.title || 'Последнее видео';
-
 		setStatus('');
 	};
 
@@ -54,7 +51,6 @@
 			linkEl.href = CHANNEL_URL;
 			delete linkEl.dataset.videoId;
 		}
-		if (titleEl) titleEl.textContent = 'НЕ УДАЛОСЬ ЗАГРУЗИТЬ ПОСЛЕДНЕЕ ВИДЕО';
 		setStatus('YouTube');
 	};
 

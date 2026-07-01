@@ -234,7 +234,14 @@ iframe {
 	margin-bottom: 0;
 }
 .btn_label {
+	width: 250px;
 	height: 70px;
+}
+.btn_label-demo {
+	width: 300px;
+}
+.btn_label-wide {
+	width: 380px;
 }
 .icon_btn,
 .round_btn {
@@ -617,7 +624,7 @@ iframe {
 }
 .education_media img {
 	width: 100%;
-	height: 650px;
+	height: 743px;
 	object-fit: cover;
 }
 .review_card-flex {
@@ -633,8 +640,8 @@ iframe {
 	filter: invert(34%) sepia(87%) saturate(5482%) hue-rotate(253deg) brightness(101%) contrast(105%);	
 }
 .review_text {
-	font-size: 22px;
-	font-weight: 900;
+	font-size: 14px;
+	font-weight: 700;
 	line-height: 1.45;
 }
 .review_stars {
@@ -658,10 +665,12 @@ iframe {
 	gap: 26px;
 }
 .youtube_block-grid {
-	grid-template-columns: 0.8fr 1.45fr 0.9fr;
+	grid-template-columns: 0.72fr 1.8fr;
 	gap: 36px;
 }
 .youtube_preview {
+	min-height: 430px;
+	aspect-ratio: 16 / 9;
 	border-radius: 8px;
 }
 .youtube_content-flex {
