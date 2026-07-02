@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Emphaseas Admin</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body class="auth_mode">
+  <main class="admin_shell">
+    <section class="login_card" data-login>
+      <h1>Emphaseas Admin</h1>
+      <p>Введите логин и пароль администратора.</p>
+      <form data-login-form>
+        <input type="text" name="login" placeholder="Логин" autocomplete="username" required />
+        <input type="password" name="password" placeholder="Пароль" autocomplete="current-password" required />
+        <button type="submit">Войти</button>
+      </form>
+    </section>
+
+    <section class="dashboard" data-panel hidden>
+      <aside class="sidebar">
+        <div class="brand">Emphaseas</div>
+        <nav class="nav">
+          <button class="is-active" type="button" data-section="massimizer">Massimizer</button>
+          <button type="button" data-section="mastering">Mastering</button>
+          <button type="button" data-section="faq">FAQ</button>
+          <button type="button" data-section="reviews">Отзывы</button>
+          <button type="button" data-section="catalog">Лейбл</button>
+        </nav>
+        <div class="sidebar_bottom">
+          <a class="sidebar_link" href="../">На сайт</a>
+          <button class="sidebar_logout" type="button" data-logout>Выйти</button>
+        </div>
+      </aside>
+
+      <div class="content">
+        <header class="topbar">
+          <div>
+            <h1 data-page-title>Massimizer</h1>
+            <p data-page-subtitle>Управление контентом сайта</p>
+          </div>
+        </header>
+
+        <p class="status" data-status></p>
+
+        <section class="page is-active" data-page="massimizer">
+          <div class="card">
+            <h2>Файл для скачивания</h2>
+            <p>Новый ZIP сохраняется с оригинальным именем файла. Старый ZIP из `assets/downloads/` удаляется.</p>
+            <div class="file_box" data-massimizer-current></div>
+            <form class="upload_form" data-upload-massimizer>
+              <input type="file" name="file" accept=".zip" required />
+              <button type="submit">Загрузить ZIP</button>
+            </form>
+            <div class="upload_progress" data-upload-progress hidden><span></span></div>
+          </div>
+        </section>
+
+        <section class="page" data-page="mastering">
+          <div class="table_head">
+            <h2>Mastering плееры</h2>
+          </div>
+          <div data-mastering-editor></div>
+        </section>
+
+        <section class="page" data-page="faq">
+          <div class="table_head">
+            <h2>Часто задаваемые вопросы</h2>
+            <button type="button" data-add-faq>Добавить</button>
+          </div>
+          <div data-faq-editor></div>
+        </section>
+
+        <section class="page" data-page="reviews">
+          <div class="table_head">
+            <h2>Отзывы</h2>
+            <button type="button" data-add-review>Добавить</button>
+          </div>
+          <div data-reviews-editor></div>
+        </section>
+
+        <section class="page" data-page="catalog">
+          <div class="table_head">
+            <h2>Музыкальный лейбл</h2>
+            <button type="button" data-add-catalog>Добавить</button>
+          </div>
+          <div data-catalog-editor></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" data-modal hidden>
+    <div class="modal_overlay" data-close-modal></div>
+    <form class="modal_card" data-modal-form>
+      <div class="modal_head">
+        <div>
+          <h2 data-modal-title>Редактирование</h2>
+          <p data-modal-subtitle></p>
+        </div>
+        <button class="icon_btn" type="button" data-close-modal aria-label="Закрыть">×</button>
+      </div>
+      <div class="modal_body" data-modal-body></div>
+      <div class="modal_footer">
+        <button class="btn_light" type="button" data-close-modal>Отмена</button>
+        <button type="submit">Применить</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="admin.js" defer></script>
+</body>
+</html>

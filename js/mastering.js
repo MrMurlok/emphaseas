@@ -1,13 +1,17 @@
 'use strict';
 
 (() => {
-	const players = Array.from(document.querySelectorAll('[data-mastering-player]'));
-	if (!players.length) return;
+	const escapeHtml = (value = '') => String(value)
+		.replaceAll('&', '&amp;')
+		.replaceAll('<', '&lt;')
+		.replaceAll('>', '&gt;')
+		.replaceAll('"', '&quot;');
 
 	const playIcon = 'assets/icons/play_1.svg';
 	const pauseIcon = 'assets/icons/pause.svg';
 	let activePlayer = null;
 	let audioContext = null;
+	let initialized = false;
 
 	const formatTime = (seconds) => {
 		if (!Number.isFinite(seconds) || seconds < 0) seconds = 0;
@@ -227,5 +231,48 @@
 		}
 	}
 
-	players.map((player) => new ComparePlayer(player));
+	const playerTemplate = (item, index) => {
+		const title = item.title || `Demo ${index + 1}`;
+		return `
+		<article class="mastering_player" data-mastering-player data-after-src="${escapeHtml(item.after)}" data-before-src="${escapeHtml(item.before)}">
+			<div class="mastering_compare">
+				<div class="mastering_compare-labels"><span>After</span><span>Before</span></div>
+				<canvas class="mastering_equalizer" data-equalizer width="760" height="120" aria-hidden="true"></canvas>
+				<input class="mastering_mix" data-mix-slider type="range" min="0" max="100" value="0" aria-label="Переключение After / Before" />
+			</div>
+			<div class="mastering_controls-flex">
+				<button class="mastering_play" type="button" data-play aria-label="Воспроизвести ${escapeHtml(title)}"><img src="assets/icons/play_1.svg" alt="" data-play-icon decoding="async" /></button>
+				<div class="mastering_meta"><strong>${escapeHtml(title)}</strong><span data-current>00:00</span></div>
+				<input class="mastering_seek" data-seek type="range" min="0" max="1000" value="0" aria-label="Перемотка ${escapeHtml(title)}" />
+				<span class="mastering_remaining" data-remaining>-00:00</span>
+			</div>
+		</article>
+	`;
+	};
+
+	const renderFromContent = (data) => {
+		const root = document.querySelector('.mastering_players-flex');
+		if (!root || !Array.isArray(data?.mastering?.groups)) return;
+		root.innerHTML = data.mastering.groups.map((group) => `
+			<div class="mastering_group">
+				<h3 class="mastering_group-title">${escapeHtml(group.title)}</h3>
+				${(group.items || []).map(playerTemplate).join('')}
+			</div>
+		`).join('');
+	};
+
+	const init = (data = null) => {
+		if (initialized) return;
+		if (data) renderFromContent(data);
+		const players = Array.from(document.querySelectorAll('[data-mastering-player]'));
+		if (!players.length) return;
+		players.map((player) => new ComparePlayer(player));
+		initialized = true;
+	};
+
+	if (window.emphaseasContentReady) {
+		window.emphaseasContentReady.then((data) => init(data));
+	} else {
+		init();
+	}
 })();

@@ -8,7 +8,7 @@
 
 	if (!catalog || !track || !player) return;
 
-	const releases = [
+	const fallbackReleases = [
 		{
 			title: 'Futuristic',
 			artist: 'Monotype',
@@ -58,6 +58,13 @@
 			audio: 'assets/audio/EastColors - Percwerk.mp3',
 		},
 	];
+
+	let releases = fallbackReleases;
+	const escapeHtml = (value = '') => String(value)
+		.replaceAll('&', '&amp;')
+		.replaceAll('<', '&lt;')
+		.replaceAll('>', '&gt;')
+		.replaceAll('"', '&quot;');
 
 	const audio = new Audio();
 	audio.preload = 'metadata';
@@ -119,6 +126,7 @@
 
 	const updatePlayerInfo = () => {
 		const release = releases[activeIndex];
+		if (!release) return;
 		coverEl.src = release.cover;
 		coverEl.alt = release.title;
 		titleEl.textContent = release.title;
@@ -132,6 +140,7 @@
 	};
 
 	const playRelease = async (index) => {
+		if (!releases.length) return;
 		activeIndex = (index + releases.length) % releases.length;
 		const release = releases[activeIndex];
 
@@ -157,18 +166,21 @@
 		}
 	};
 
-	releases.forEach((release, index) => {
-		const card = document.createElement('button');
-		card.className = 'catalog_release';
-		card.type = 'button';
-		card.innerHTML = `
-			<img class="catalog_release-cover" src="${release.cover}" alt="${release.title}" loading="lazy" decoding="async" />
-			<span class="catalog_release-title">${release.title}</span>
-			<span class="catalog_release-artist">${release.artist}</span>
-		`;
-		card.addEventListener('click', () => playRelease(index));
-		track.append(card);
-	});
+	const renderCards = () => {
+		track.innerHTML = '';
+		releases.forEach((release, index) => {
+			const card = document.createElement('button');
+			card.className = 'catalog_release';
+			card.type = 'button';
+			card.innerHTML = `
+				<img class="catalog_release-cover" src="${escapeHtml(release.cover)}" alt="${escapeHtml(release.title)}" loading="lazy" decoding="async" />
+				<span class="catalog_release-title">${escapeHtml(release.title)}</span>
+				<span class="catalog_release-artist">${escapeHtml(release.artist)}</span>
+			`;
+			card.addEventListener('click', () => playRelease(index));
+			track.append(card);
+		});
+	};
 
 	prevBtn.addEventListener('click', () => {
 		columnIndex = Math.max(0, columnIndex - 1);
@@ -235,6 +247,17 @@
 
 	window.addEventListener('resize', updatePlayerOffset);
 
-	updatePlayerInfo();
-	updateCarousel();
+	const init = (data = null) => {
+		if (Array.isArray(data?.catalog) && data.catalog.length) releases = data.catalog;
+		renderCards();
+		activeIndex = Math.min(activeIndex, releases.length - 1);
+		updatePlayerInfo();
+		updateCarousel();
+	};
+
+	if (window.emphaseasContentReady) {
+		window.emphaseasContentReady.then(init);
+	} else {
+		init();
+	}
 })();

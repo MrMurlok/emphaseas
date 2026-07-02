@@ -1,5 +1,5 @@
-# Кеш YouTube API — не добавлять в git
 /api/yt_cache.json
+/api/admin_config.php
 
 privacy-policy-eu.md
 privacy-policy.md

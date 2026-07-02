@@ -35,6 +35,37 @@ const revealItems = document.querySelectorAll([
 
 const revealDirections = ['reveal_from-left', 'reveal_from-right', 'reveal_from-bottom', 'reveal_from-top'];
 
+const escapeHtml = (value = '') => String(value)
+  .replaceAll('&', '&amp;')
+  .replaceAll('<', '&lt;')
+  .replaceAll('>', '&gt;')
+  .replaceAll('"', '&quot;');
+
+const renderFaq = (items) => {
+  const root = document.querySelector('.faq_list-flex');
+  if (!root || !Array.isArray(items) || !items.length) return;
+  root.innerHTML = items.map((item) => `
+    <article class="faq_item">
+      <button class="faq_head-flex" type="button">${escapeHtml(item.question)}<span>+</span></button>
+      <p>${escapeHtml(item.answer)}</p>
+    </article>
+  `).join('');
+  root.querySelectorAll('.faq_head-flex').forEach((head) => {
+    head.addEventListener('click', () => {
+      head.closest('.faq_item')?.classList.toggle('is-open');
+    });
+  });
+};
+
+const applyContent = (data) => {
+  if (!data) return;
+  const download = document.querySelector('[data-massimizer-download]');
+  if (download && data.massimizer?.download) download.href = data.massimizer.download;
+  renderFaq(data.faq);
+};
+
+if (window.emphaseasContentReady) window.emphaseasContentReady.then(applyContent);
+
 if (revealItems.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   revealItems.forEach((item, index) => {
     item.classList.add('reveal', revealDirections[index % revealDirections.length]);
