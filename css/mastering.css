@@ -1,5 +1,6 @@
 /* Block 02: before / after audio players */
 .mastering_players-flex {
+	--mix-thumb-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238d3cff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 7h13l-4-4'/%3E%3Cpath d='M20 7l-4 4'/%3E%3Cpath d='M17 17H4l4 4'/%3E%3Cpath d='M4 17l4-4'/%3E%3C/svg%3E");
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 	gap: 24px;
@@ -81,7 +82,7 @@
 	border-radius: 50%;
 	appearance: none;
 	-webkit-appearance: none;
-	background: #fff url("../assets/icons/exchange.svg") center / 24px 24px no-repeat;
+	background: #fff var(--mix-thumb-icon) center / 24px 24px no-repeat;
 	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
 }
 
@@ -90,7 +91,7 @@
 	height: 34px;
 	border: 0;
 	border-radius: 50%;
-	background: #fff url("../assets/icons/exchange.svg") center / 24px 24px no-repeat;
+	background: #fff var(--mix-thumb-icon) center / 24px 24px no-repeat;
 	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
 }
 

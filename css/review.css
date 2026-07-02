@@ -28,8 +28,17 @@
 	height: 520px;
 	overflow-y: auto;
 	padding-right: 8px;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 1.45;
 	scrollbar-width: thin;
 	scrollbar-color: var(--purple) rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 1180px) {
+	.review_text {
+		font-size: 18px;
+	}
 }
 
 .review_text::-webkit-scrollbar {

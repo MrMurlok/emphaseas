@@ -24,9 +24,10 @@
 	class ComparePlayer {
 		constructor(root) {
 			this.root = root;
-			this.afterAudio = new Audio(root.dataset.afterSrc || 'assets/audio/audio_1.mp3');
-			this.beforeAudio = new Audio(root.dataset.beforeSrc || 'assets/audio/audio_2.mp3');
+			this.afterAudio = new Audio();
+			this.beforeAudio = new Audio();
 			this.audios = [this.afterAudio, this.beforeAudio];
+			this.audioSourcesLoaded = false;
 			this.playButton = root.querySelector('[data-play]');
 			this.playButtonIcon = root.querySelector('[data-play-icon]');
 			this.mixSlider = root.querySelector('[data-mix-slider]');
@@ -41,7 +42,7 @@
 			this.animationFrame = null;
 
 			this.audios.forEach((audio) => {
-				audio.preload = 'metadata';
+				audio.preload = 'none';
 				audio.addEventListener('loadedmetadata', () => this.updateTime());
 				audio.addEventListener('timeupdate', () => this.updateTime());
 				audio.addEventListener('ended', () => this.stop());
@@ -58,8 +59,16 @@
 			this.drawIdleEqualizer();
 		}
 
+		loadSources() {
+			if (this.audioSourcesLoaded) return;
+			this.afterAudio.src = this.root.dataset.afterSrc || 'assets/audio/audio_1.mp3';
+			this.beforeAudio.src = this.root.dataset.beforeSrc || 'assets/audio/audio_2.mp3';
+			this.audioSourcesLoaded = true;
+		}
+
 		setupAudio() {
 			if (this.ready) return;
+			this.loadSources();
 			const context = getContext();
 			this.afterSource = context.createMediaElementSource(this.afterAudio);
 			this.beforeSource = context.createMediaElementSource(this.beforeAudio);
@@ -89,6 +98,7 @@
 		async play() {
 			if (activePlayer && activePlayer !== this) activePlayer.pause();
 			activePlayer = this;
+			this.loadSources();
 			this.setupAudio();
 			await getContext().resume();
 			this.syncBeforeToAfter();

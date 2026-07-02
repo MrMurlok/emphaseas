@@ -219,18 +219,25 @@ iframe {
 .studio_actions-flex {
 	display: flex;
 	gap: 12px;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	margin-bottom: 40px;
 }
 .education_actions-flex {
 	display: flex;
 	gap: 12px;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	margin-bottom: 40px;
 }
-.studio_actions-flex .btn_section,
-.education_actions-flex .btn_section {
+.studio_actions-flex .btn_section {
+	flex: 1 1 0;
 	max-width: 220px;
+	min-width: 0;
+	margin-bottom: 0;
+}
+.education_actions-flex .btn_section {
+	flex: 1 1 0;
+	max-width: 220px;
+	min-width: 0;
 	margin-bottom: 0;
 }
 .btn_label {
@@ -639,11 +646,6 @@ iframe {
 	width: 42px;
 	filter: invert(34%) sepia(87%) saturate(5482%) hue-rotate(253deg) brightness(101%) contrast(105%);	
 }
-.review_text {
-	font-size: 14px;
-	font-weight: 700;
-	line-height: 1.45;
-}
 .review_stars {
 	color: var(--purple);
 	letter-spacing: 0.14em;
@@ -658,37 +660,16 @@ iframe {
 .label {
 	background: var(--card);
 }
-.label_links-flex {
-	grid-column: 2;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 26px;
-}
 .youtube_block-grid {
 	grid-template-columns: 0.72fr 1.8fr;
 	gap: 36px;
 }
 .youtube_preview {
-	min-height: 430px;
+	width: min(100%, 780px);
+	max-height: 440px;
+	justify-self: center;
 	aspect-ratio: 16 / 9;
 	border-radius: 8px;
-}
-.youtube_content-flex {
-	display: flex;
-	flex-direction: column;
-	gap: 22px;
-}
-.youtube_content-flex h3 {
-	font-family: var(--h1-font);
-	font-size: clamp(24px, 2.5vw, 29px);
-	line-height: 1.08;
-	text-transform: uppercase;
-}
-.youtube_content-flex p {
-	color: var(--grey);
-	font-weight: 700;
-	line-height: 1.2;
-	font-size: 16px;
 }
 .contacts_block-grid {
 	grid-template-columns: 0.9fr 1.1fr;
@@ -859,9 +840,6 @@ iframe {
 	.youtube_subtitle {
 		font-size: clamp(20px, 2vw, 24px);
 	}
-	.review_text {
-		font-size: 18px;
-	}
 	.header_burger-flex {
 		display: grid;
 	}
@@ -911,10 +889,16 @@ iframe {
 		font-size: 46px;
 	}
 	.hero_actions-flex,
-	.plugin_actions-flex,
-	.label_links-flex {
+	.studio_actions-flex,
+	.education_actions-flex,
+	.plugin_actions-flex {
 		display: grid;
 		width: 100%;
+	}
+	.studio_actions-flex .btn_section,
+	.education_actions-flex .btn_section {
+		max-width: 284px;
+		width: 284px;
 	}
 	.btn {
 		width: 284px;

@@ -162,7 +162,7 @@
 		card.className = 'catalog_release';
 		card.type = 'button';
 		card.innerHTML = `
-			<img class="catalog_release-cover" src="${release.cover}" alt="${release.title}" loading="lazy" />
+			<img class="catalog_release-cover" src="${release.cover}" alt="${release.title}" loading="lazy" decoding="async" />
 			<span class="catalog_release-title">${release.title}</span>
 			<span class="catalog_release-artist">${release.artist}</span>
 		`;
